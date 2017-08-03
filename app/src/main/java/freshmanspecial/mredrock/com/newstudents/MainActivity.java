@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -22,8 +21,9 @@ import freshmanspecial.mredrock.com.newstudents.fragment.Special_2017_Fragment_W
 import freshmanspecial.mredrock.com.newstudents.fragment.Special_2017_Fragment_everyday;
 import freshmanspecial.mredrock.com.newstudents.fragment.Special_2017_Fragment_delicious;
 import freshmanspecial.mredrock.com.newstudents.fragment.Special_2017_Fragment_beautiful_place;
+import freshmanspecial.mredrock.com.newstudents.utils.MyApplication;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends MyApplication {
 
     private ViewPager pager;
     private PagerSlidingTabStrip tabs1;
