@@ -25,9 +25,10 @@ public class Special_2017_Fragment_school_envir extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.special_2017_fragment_school_envir, null);
         school_envir = (RecyclerView) view.findViewById(R.id.school_envir);
-        LinearLayoutManager manager = new LinearLayoutManager(MyApplication.getContext());
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
         school_envir.setLayoutManager(manager);
-        new SchoolEnvirAdapter();
+        SchoolEnvirAdapter envirAdapter = new SchoolEnvirAdapter();
+        school_envir.setAdapter(envirAdapter);
 
         return view;
     }

@@ -23,9 +23,10 @@ public class Special_2017_Fragment_student_room extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.special_2017_fragment_student_room, null);
         student_room = (RecyclerView) view.findViewById(R.id.student_room);
-        LinearLayoutManager manager = new LinearLayoutManager(MyApplication.getContext());
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
         student_room.setLayoutManager(manager);
-        new StudentRoomAdapter();
+        StudentRoomAdapter roomAdapter = new StudentRoomAdapter();
+        student_room.setAdapter(roomAdapter);
 
         return view;
     }

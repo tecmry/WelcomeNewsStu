@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:fitsSystemWindows="true"
+        android:id="@+id/main_toolbar"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2dc1ff"
+        >
+
+        <TextView
+
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_gravity="center"
+            android:singleLine="true"
+            android:text="2017迎新网"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="16dp"
+
+            />
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/main_LL"
+        >
+        <freshmanspecial.mredrock.com.newstudents.View.special_2017_RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="378dp"
+            android:layout_height="140dp"
+            android:id="@+id/student_method"
+            android:layout_gravity="center"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:layout_marginTop="4dp"
+            android:src ="@drawable/special_2017_student_method"
+            app:riv_border_width="0dp"
+            app:riv_left_top_corner_radius="10dp"
+            app:riv_right_top_corner_radius="10dp"
+            app:riv_left_bottom_corner_radius="10dp"
+            app:riv_right_bottom_corner_radius="10dp"
+            />
+        <freshmanspecial.mredrock.com.newstudents.View.special_2017_RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="378dp"
+            android:layout_height="140dp"
+            android:id="@+id/student_style"
+            android:layout_gravity="center"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:src="@drawable/special_2017_student_style"
+            app:riv_border_width="0dp"
+            app:riv_left_top_corner_radius="10dp"
+            app:riv_right_top_corner_radius="10dp"
+            app:riv_left_bottom_corner_radius="10dp"
+            app:riv_right_bottom_corner_radius="10dp"
+            />
+        <freshmanspecial.mredrock.com.newstudents.View.special_2017_RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="378dp"
+            android:layout_height="140dp"
+            android:id="@+id/cqupt_data"
+            android:layout_gravity="center"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            android:src = "@drawable/special_2017_cqupt_data"
+            app:riv_border_width="0dp"
+            app:riv_left_top_corner_radius="10dp"
+            app:riv_right_top_corner_radius="10dp"
+            app:riv_left_bottom_corner_radius="10dp"
+            app:riv_right_bottom_corner_radius="10dp"
+            />
+        <freshmanspecial.mredrock.com.newstudents.View.special_2017_RoundedImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="378dp"
+            android:layout_height="140dp"
+            android:id="@+id/military_training"
+            android:layout_gravity="center"
+            android:layout_marginLeft="18dp"
+            android:layout_marginRight="18dp"
+            app:riv_border_width="0dp"
+            android:src = "@drawable/special_2017_military_training"
+            app:riv_left_top_corner_radius="10dp"
+            app:riv_right_top_corner_radius="10dp"
+            app:riv_left_bottom_corner_radius="10dp"
+            app:riv_right_bottom_corner_radius="10dp"
+            />
+    </LinearLayout>
+</LinearLayout>
+

@@ -24,10 +24,11 @@ public class Special_2017_Fragment_school_mess extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.special_2017_fragment_school_mess, null);
-        school_mess = (RecyclerView) view.findViewById(R.id.student_room);
-        LinearLayoutManager manager = new LinearLayoutManager(MyApplication.getContext());
+        school_mess = (RecyclerView) view.findViewById(R.id.school_mess);
+        LinearLayoutManager manager = new LinearLayoutManager(getContext());
         school_mess.setLayoutManager(manager);
-        new SchoolMessAdapter();
+        SchoolMessAdapter schoolMessAdapter = new SchoolMessAdapter();
+        school_mess.setAdapter(schoolMessAdapter);
 
         return view;
     }

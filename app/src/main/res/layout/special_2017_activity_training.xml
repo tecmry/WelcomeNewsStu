@@ -2,38 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/special_2017_activity_main"
+    android:id="@+id/special_2017_activity_training"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="freshmanspecial.mredrock.com.newstudents.activity.MainActivity">
-
+    tools:context="freshmanspecial.mredrock.com.newstudents.activity.Special_2017_TrainingActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
 
         <android.support.v7.widget.Toolbar
             android:fitsSystemWindows="true"
-            android:id="@+id/toolbar"
+            android:id="@+id/train_toolbar"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/special_2017_toolbar_color"
             >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="邮子攻略"
+                android:text="军训特辑"
                 android:textColor="#ffff"
                 android:textSize="18dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 />
-
         </android.support.v7.widget.Toolbar>
+    </LinearLayout>
 
-
-        <com.gxz.PagerSlidingTabStrip
-        android:id="@+id/tabs"
+    <com.gxz.PagerSlidingTabStrip
+        android:id="@+id/train_tabs"
         android:layout_width="match_parent"
         android:layout_height="47dp"
         app:pstsShouldExpand="true"
@@ -47,6 +49,7 @@
     <android.support.v4.view.ViewPager
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/view_pager"
+        android:id="@+id/train_view_pager"
         />
+
 </LinearLayout>

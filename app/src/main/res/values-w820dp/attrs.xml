@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="special_2017_RoundedImageView">
+            <attr name="riv_left_top_corner_radius" format="dimension" />
+            <attr name="riv_right_top_corner_radius" format="dimension" />
+            <attr name="riv_left_bottom_corner_radius" format="dimension" />
+            <attr name="riv_right_bottom_corner_radius" format="dimension" />
+            <attr name="riv_border_width" format="dimension" />
+            <attr name="riv_border_color" format="color" />
+            <attr name="riv_oval" format="boolean" />
+            <attr name="android:scaleType" />
+    </declare-styleable>
+</resources>

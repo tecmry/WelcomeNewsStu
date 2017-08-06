@@ -5,13 +5,20 @@
     android:layout_height="match_parent">
 
     <EditText
-        android:layout_width="200dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_width="220dp"
+        android:maxLines="1"
+        android:inputType="text"
+        android:gravity="center"
+        android:imeOptions="actionSearch"
         android:layout_height="wrap_content"
         android:id="@+id/wechat"
+        android:background="@drawable/special_2017_search_edit"
         android:hint="输入地区或学院"
         />
     <ImageView
-        android:paddingTop="10dp"
+        android:paddingTop="45dp"
         android:id="@+id/img_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
