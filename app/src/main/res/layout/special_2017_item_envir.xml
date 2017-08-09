@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="250dp">
-
-    <TextView
-        android:id="@+id/school_describe"
-        android:text="啊实打实大声大声大声大声大声大声的方法的规范给哈哈人"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+    android:layout_height="wrap_content">
     <ImageView
+        android:layout_gravity="center"
         android:id="@+id/img_envir"
         android:src="@mipmap/ic_launcher"
+        android:layout_width="match_parent"
+        android:layout_height="220dp" />
+
+
+    <TextView
+        android:id="@+id/school_describe_title"
+        android:text="声大声"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/school_describe_content"
+        android:text="声大声"
+        android:textSize="13dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <View
+        android:background="#EBF0F2"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"/>
 
 </LinearLayout>

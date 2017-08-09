@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/img_room"
@@ -12,12 +11,41 @@
         android:src="@mipmap/ic_launcher"
         />
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/student_describe"
-        android:layout_width="match_parent"
+        android:id="@+id/student_describe_title"
+        android:textSize="16dp"
+        android:textColor="@android:color/black"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="基督教徒演讲后法规和天堂与他人合法的保大发个梵蒂冈地方个"
+        android:text="基督教"
         />
+        <View
+            android:layout_width="5dp"
+            android:layout_height="16dp"/>
+        <TextView
+            android:text="基督教"
+            android:id="@+id/student_describe_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginLeft="20dp"
+        android:id="@+id/student_describe_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="基督教"
+        android:textSize="13dp"
+        />
+    <View
+        android:background="#EBF0F2"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"/>
 
 </LinearLayout>

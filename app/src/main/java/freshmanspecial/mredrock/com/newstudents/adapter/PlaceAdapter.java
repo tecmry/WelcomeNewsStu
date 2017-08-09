@@ -40,8 +40,8 @@ public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHolder>{
 
         public ViewHolder(View view) {
             super(view);
-            img_place = (ImageView) view.findViewById(R.id.img_place);
-            place_describe = (TextView) view.findViewById(R.id.place_describe);
+            img_place = (ImageView) view.findViewById(R.id.beautiful_place);
+            place_describe = (TextView) view.findViewById(R.id.describe);
         }
     }
 }

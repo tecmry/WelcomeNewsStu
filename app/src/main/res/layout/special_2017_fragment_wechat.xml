@@ -1,28 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:layout_marginTop="40dp"
-        android:layout_marginLeft="50dp"
-        android:layout_width="220dp"
+    <AutoCompleteTextView
+        android:id="@+id/wechat"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="30dp"
+        android:layout_width="280dp"
+        android:completionThreshold="1"
         android:maxLines="1"
-        android:inputType="text"
+        android:background="@drawable/special_2017_search_edit"
         android:gravity="center"
         android:imeOptions="actionSearch"
-        android:layout_height="wrap_content"
-        android:id="@+id/wechat"
-        android:background="@drawable/special_2017_search_edit"
         android:hint="输入地区或学院"
-        />
+        android:dropDownWidth="match_parent"
+        android:cursorVisible="true"
+        android:textCursorDrawable="@color/cardview_dark_background"
+        android:layout_height="wrap_content" />
     <ImageView
-        android:paddingTop="45dp"
+        android:layout_alignParentRight="true"
+        android:layout_toRightOf="@id/wechat"
+        android:paddingTop="35dp"
         android:id="@+id/img_search"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/special_2017_search"
         />
+    <!--<android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/wechat"
+        android:id="@+id/rv_QQGroup"
+        android:layout_marginTop="42dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</LinearLayout>
+    </android.support.v7.widget.RecyclerView>-->
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_QQGroup"
+        android:layout_marginTop="70dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </android.support.v7.widget.RecyclerView>
+
+
+</RelativeLayout>

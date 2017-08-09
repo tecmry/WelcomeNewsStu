@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="10dp"
+        android:layout_height="150dp"/>
+
+    <ImageView
+        android:layout_toRightOf="@id/view_line"
+        android:src="@drawable/special_2017_chuhua"
+        android:id="@+id/training_style_img"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
+
+</RelativeLayout>

@@ -28,7 +28,8 @@ public class Special_2017_Fragment_notion extends Fragment {
         notion = (RecyclerView) view.findViewById(R.id.notion);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         notion.setLayoutManager(manager);
-        new NotionAdapter();
+        NotionAdapter adapter = new NotionAdapter();
+        notion.setAdapter(adapter);
 
         return view;
     }

@@ -26,14 +26,7 @@ import freshmanspecial.mredrock.com.newstudents.fragment.Special_2017_Fragment_n
 import freshmanspecial.mredrock.com.newstudents.fragment.Special_2017_Fragment_school_envir;
 import freshmanspecial.mredrock.com.newstudents.fragment.Special_2017_Fragment_school_mess;
 import freshmanspecial.mredrock.com.newstudents.fragment.Special_2017_Fragment_student_room;
-import freshmanspecial.mredrock.com.newstudents.net.Post;
-import okhttp3.Response;
-import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
+import freshmanspecial.mredrock.com.newstudents.net.HttpService;
 
 public class Special_2017_MainActivity extends AppCompatActivity {
 
@@ -58,6 +51,8 @@ public class Special_2017_MainActivity extends AppCompatActivity {
         pager = (ViewPager) findViewById(R.id.view_pager);
         tabs1 = (PagerSlidingTabStrip) findViewById(R.id.tabs);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        /*HttpService service = new HttpService();
+        service.QQgroup();*/
 
 
         setSupportActionBar(toolbar);

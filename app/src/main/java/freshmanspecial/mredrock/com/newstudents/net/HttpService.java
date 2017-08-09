@@ -1,8 +1,6 @@
 package freshmanspecial.mredrock.com.newstudents.net;
 
 
-import android.widget.Toast;
-
 import freshmanspecial.mredrock.com.newstudents.Bean.QQGroup;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -12,7 +10,10 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 public class HttpService {
-    public static void QQGroup(){
+
+    private static QQGroup group;
+
+    public static QQGroup QQgroup(){
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -37,11 +38,14 @@ public class HttpService {
                             }
 
                             @Override
-                            public void onNext(QQGroup QQGroup) {
-                                System.out.println("数据位："+ QQGroup.getData().get(1).getNumberX());
+                            public void onNext(QQGroup qqGroup) {
+                                group=qqGroup;
+
                             }
                         });
             }
         }).start();
+        return group;
     }
+
 }
