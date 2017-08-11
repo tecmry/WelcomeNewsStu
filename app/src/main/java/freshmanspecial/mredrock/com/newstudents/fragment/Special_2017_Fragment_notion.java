@@ -25,11 +25,11 @@ public class Special_2017_Fragment_notion extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.special_2017_fragment_notion, null);
-        notion = (RecyclerView) view.findViewById(R.id.notion);
+        /*notion = (RecyclerView) view.findViewById(R.id.notion);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         notion.setLayoutManager(manager);
         NotionAdapter adapter = new NotionAdapter();
-        notion.setAdapter(adapter);
+        notion.setAdapter(adapter);*/
 
         return view;
     }

@@ -27,7 +27,7 @@ public class Special_2017_Fragment_school_mess extends Fragment {
         school_mess = (RecyclerView) view.findViewById(R.id.school_mess);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         school_mess.setLayoutManager(manager);
-        SchoolMessAdapter schoolMessAdapter = new SchoolMessAdapter();
+        SchoolMessAdapter schoolMessAdapter = new SchoolMessAdapter(getContext(),getActivity());
         school_mess.setAdapter(schoolMessAdapter);
 
         return view;

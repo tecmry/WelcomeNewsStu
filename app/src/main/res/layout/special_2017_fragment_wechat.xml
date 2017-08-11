@@ -1,40 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<freshmanspecial.mredrock.com.newstudents.utils.KeyboardListenRelativeLayout
+    android:id="@+id/keyboardRelativeLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <AutoCompleteTextView
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <freshmanspecial.mredrock.com.newstudents.View.MyAutoCompleteTextView
         android:id="@+id/wechat"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="30dp"
-        android:layout_width="280dp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_marginRight="60dp"
         android:completionThreshold="1"
         android:maxLines="1"
+        android:drawableRight="@drawable/special_2017_search_delete"
         android:background="@drawable/special_2017_search_edit"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:imeOptions="actionSearch"
         android:hint="输入地区或学院"
+        android:textSize="14sp"
         android:dropDownWidth="match_parent"
         android:cursorVisible="true"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/special_2017_search"
         android:textCursorDrawable="@color/cardview_dark_background"
         android:layout_height="wrap_content" />
-    <ImageView
-        android:layout_alignParentRight="true"
-        android:layout_toRightOf="@id/wechat"
-        android:paddingTop="35dp"
-        android:id="@+id/img_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/special_2017_search"
-        />
-    <!--<android.support.v7.widget.RecyclerView
-        android:layout_below="@+id/wechat"
-        android:id="@+id/rv_QQGroup"
-        android:layout_marginTop="42dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </android.support.v7.widget.RecyclerView>-->
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:gravity="right"
+            android:layout_marginTop="35dp"
+            android:text="取消"
+            android:textSize="14sp"
+            android:textColor="#65B2FF"
+            android:visibility="invisible"
+            android:layout_marginLeft="358dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+</RelativeLayout>
 
 
     <android.support.v7.widget.RecyclerView
@@ -45,4 +50,4 @@
     </android.support.v7.widget.RecyclerView>
 
 
-</RelativeLayout>
+</freshmanspecial.mredrock.com.newstudents.utils.KeyboardListenRelativeLayout>

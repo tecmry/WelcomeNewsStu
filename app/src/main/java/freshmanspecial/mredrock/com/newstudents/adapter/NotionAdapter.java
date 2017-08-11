@@ -12,7 +12,7 @@ import freshmanspecial.mredrock.com.newstudents.R;
  * Created by king on 2017/8/3.
  */
 public class NotionAdapter extends RecyclerView.Adapter<NotionAdapter.ViewHolder>{
-    private String[]text_top={
+    /*private String[]text_top={
             "新生清单",
             "安全守则",
             "乘车路线",
@@ -62,7 +62,7 @@ public class NotionAdapter extends RecyclerView.Adapter<NotionAdapter.ViewHolder
                     "方案五\n" +
                     "朝天门码头（距离学校约9公里）：可乘车至南坪后转乘346或347路公交车至学校；直接打车到校费用约为20元。",
 
-    };
+    };*/
 
     @Override
     public NotionAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -75,14 +75,14 @@ public class NotionAdapter extends RecyclerView.Adapter<NotionAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(NotionAdapter.ViewHolder holder, int position) {
-        holder.top_title.setText(text_top[position]);
-        holder.describe.setText(text_describe[position]);
+        /*holder.top_title.setText(text_top[position]);
+        holder.describe.setText(text_describe[position]);*/
     }
 
 
     @Override
     public int getItemCount() {
-        return 0;
+        return 5;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{

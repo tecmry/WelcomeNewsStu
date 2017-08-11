@@ -87,9 +87,7 @@ public class SchoolEnvirAdapter extends RecyclerView.Adapter<SchoolEnvirAdapter.
                 big_img.setImageResource(imageId[position]);
                 popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
                 popupWindow.setFocusable(true);
-               /* //4.获取条目的位置
-                int []location =new int[2];
-                v.getLocationInWindow(location);*/
+
 
                 popupWindow.showAtLocation(v, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL,0,0);
                 backgroundAlpha(0.3f);
@@ -139,7 +137,7 @@ public class SchoolEnvirAdapter extends RecyclerView.Adapter<SchoolEnvirAdapter.
 
     @Override
     public int getItemCount() {
-        return imageId.length;
+        return texts_titles.length;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

@@ -1,17 +1,33 @@
 package freshmanspecial.mredrock.com.newstudents.adapter;
 
+import android.content.Context;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.ScaleAnimation;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+
+import java.util.ArrayList;
 
 import freshmanspecial.mredrock.com.newstudents.R;
 
 
 public class SchoolMessAdapter extends RecyclerView.Adapter<SchoolMessAdapter.ViewHolder>{
 
+    private Context context;
+    private FragmentActivity activity;
+    private ImageView imageView;
     private String[]text_titles={
             "中心食堂",
             "红高粱",
@@ -34,6 +50,24 @@ public class SchoolMessAdapter extends RecyclerView.Adapter<SchoolMessAdapter.Vi
             "千喜鹤之下的优秀食堂，美食窗口众多，各有特色，每年都会不断推陈出新，更重要的是性价比非常高，因此吸引了莘莘学子，客流量很大。来自”延生”不断的热情推出了石锅拌饭、冒菜，咖喱炒饭等特色。而食堂的剁椒拌面绝对符合重庆特色。如果你感觉很辣，那来杯西瓜汁降降火。食堂内有各种鲜榨果汁。军训那几天，喝上一杯延生西瓜汁，真是降火消暑又愉悦人心，睡上一个饱饱的午觉。嗯，该到延生吃饭了哟！",
 
     };
+    private PopupWindow popupWindow;
+    private  ArrayList<ImageView> imgs;
+    private int []imageId={
+            R.drawable.special_2017_laiokan,
+            R.drawable.special_2017_xinke,
+            R.drawable.special_2017_shuzi,
+            R.drawable.special_2017_erjiao,
+            R.drawable.special_2017_gaoshan,
+            R.drawable.special_2017_yuhong,
+            R.drawable.special_2017_yangkan,
+            R.drawable.special_2017_chuhua,
+    };
+
+    public SchoolMessAdapter(Context context, FragmentActivity activity) {
+        this.context=context;
+        this.activity=activity;
+    }
+
     @Override
     public SchoolMessAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.special_2017_item_mess, parent, false);
@@ -44,18 +78,113 @@ public class SchoolMessAdapter extends RecyclerView.Adapter<SchoolMessAdapter.Vi
 
 
     @Override
-    public void onBindViewHolder(SchoolMessAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(SchoolMessAdapter.ViewHolder holder, final int position) {
         holder.mess_describe_content.setText(text_contents[position]);
         holder.mess_describe_title.setText(text_titles[position]);
+        holder.img_mess.setOnClickListener(new View.OnClickListener() {
+
+            private MypagerAdapter myPagerAdapter;
+            class MypagerAdapter extends PagerAdapter {
+                private MypagerAdapter(){
+                    imgs = new ArrayList<>();
+                    for (int i =0;i<imageId.length;i++){
+                        //初始化要显示的图片对象
+                        imageView = new ImageView(context);
+                        imageView.setBackgroundResource(imageId[i]);
+                        imgs.add(imageView);
+                    }
+                }
+                @Override
+                public int getCount() {
+                    return 6;
+                }
+                @Override
+                public boolean isViewFromObject(View view, Object object) {
+                    return view==object;
+                }
+
+                @Override
+                public Object instantiateItem(ViewGroup container, int position) {
+                    int newPosition = position% imgs.size();
+                    ImageView view =imgs.get(newPosition);
+                    container.addView(view);
+                    return view;
+                }
+
+                @Override
+                public void destroyItem(ViewGroup container, int position, Object object) {
+                    container.removeView((View)object);
+
+                }
+            }
+
+
+
+
+
+            @Override
+            public void onClick(View v) {
+                //5.弹出新气泡之前，删除旧气泡
+                View contentView = View.inflate(context, R.layout.special_2017_popu_window_viewpager, null);
+                ViewPager vp_big_img = (ViewPager) contentView.findViewById(R.id.vp_big_img);
+                myPagerAdapter = new MypagerAdapter();
+                vp_big_img.setAdapter(myPagerAdapter);
+                popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                popupWindow.setFocusable(true);
+
+
+                popupWindow.showAtLocation(v, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL,0,0);
+                backgroundAlpha(0.3f);
+
+                ScaleAnimation scaleAnimation = new ScaleAnimation(0,1,0,1, Animation.RELATIVE_TO_SELF,0,Animation.RELATIVE_TO_SELF,0.5f);
+                scaleAnimation.setDuration(500);
+
+                //渐变动画
+                AlphaAnimation alphaAnimation = new AlphaAnimation(0.4f, 1.0f);
+                alphaAnimation.setDuration(500);
+
+                AnimationSet animationSet = new AnimationSet(true);
+                animationSet.addAnimation(scaleAnimation);
+                animationSet.addAnimation(alphaAnimation);
+                contentView.startAnimation(animationSet);
+
+                imageView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        hidePopuwindow();
+                    }
+                });
+
+            }
+        });
     }
 
+    private void hidePopuwindow() {
+        if (popupWindow != null) {
+            popupWindow.dismiss();//隐藏气泡
+            backgroundAlpha(1f);
+            popupWindow = null;
+        }
+    }
+
+    /**
+     * 设置添加屏幕的背景透明度
+     * @param bgAlpha
+     */
+    public void backgroundAlpha(float bgAlpha)
+    {
+        WindowManager.LayoutParams lp = activity.getWindow().getAttributes();
+        lp.alpha = bgAlpha; //0.0-1.0
+        activity.getWindow().setAttributes(lp);
+    }
 
     @Override
     public int getItemCount() {
-        return 20;
+        return text_titles.length;
     }
 
-    public class  ViewHolder extends RecyclerView.ViewHolder{
+        class  ViewHolder extends RecyclerView.ViewHolder{
         private final ImageView img_mess;
         private final TextView mess_describe_title;
         private final TextView mess_describe_content;

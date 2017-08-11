@@ -25,7 +25,7 @@ public class Special_2017_Fragment_student_room extends Fragment {
         student_room = (RecyclerView) view.findViewById(R.id.student_room);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         student_room.setLayoutManager(manager);
-        StudentRoomAdapter roomAdapter = new StudentRoomAdapter();
+        StudentRoomAdapter roomAdapter = new StudentRoomAdapter(getContext(),getActivity());
         student_room.setAdapter(roomAdapter);
 
         return view;

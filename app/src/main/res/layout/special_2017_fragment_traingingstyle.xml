@@ -3,12 +3,25 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_marginLeft="5dp"
+            android:layout_width="3dp"
+            android:background="#58B1FC"
+            android:layout_height="17sp"/>
     <TextView
         android:textSize="17sp"
         android:textColor="@android:color/black"
         android:text="军训图片"
+        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"/>
@@ -24,12 +37,25 @@
     android:layout_width="match_parent"
     android:layout_height="5dp"
     android:background="#EBF0F2"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_marginLeft="5dp"
+            android:layout_width="3dp"
+            android:background="#58B1FC"
+            android:layout_height="17sp"/>
     <TextView
         android:textSize="17sp"
         android:textColor="@android:color/black"
         android:text="军训视频"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+        </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="5dp"/>
@@ -49,8 +75,8 @@
             android:layout_width="160dp"
             android:layout_height="150dp" />
             <ImageView
-                android:layout_marginLeft="60dp"
-                android:layout_marginTop="40dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="50dp"
                 android:src="@drawable/special_2017_play"
                 android:layout_width="50dp"
                 android:layout_height="50dp" />
@@ -61,13 +87,13 @@
             android:layout_height="wrap_content">
         <ImageView
             android:background="@drawable/special_2017_training2"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="25dp"
             android:id="@+id/vt_video2"
             android:layout_width="160dp"
             android:layout_height="150dp" />
         <ImageView
-            android:layout_marginLeft="65dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="50dp"
             android:src="@drawable/special_2017_play"
             android:layout_width="50dp"
             android:layout_height="50dp" />
@@ -82,26 +108,264 @@
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="#EBF0F2"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:layout_marginLeft="5dp"
+            android:layout_width="3dp"
+            android:background="#58B1FC"
+            android:layout_height="17sp"/>
 
     <TextView
         android:textSize="17sp"
         android:textColor="@android:color/black"
         android:text="军歌推荐"
+        android:layout_marginLeft="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+        </LinearLayout>
     <View
         android:layout_width="match_parent"
         android:layout_height="5dp"/>
 
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
     <TextView
-        android:text="1.强军战歌                    2.军中绿花\n
-3.战友还记得吗            4.一二三四歌\n
-5.75厘米                       6.打靶归来\n
-7.精忠报国                    8.我的老班长\n
-9.保卫黄河                   10.国际歌"
+        android:layout_marginLeft="10dp"
+        android:textColor="#65B2FF"
+        android:text="01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="强军战歌"
+        android:textColor="#000"
         android:textSize="14sp"
-        android:layout_marginLeft="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <TextView
+        android:text="阎维文"
+        android:layout_marginLeft="50sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginLeft="35dp"
+        android:textColor="#65B2FF"
+        android:text="02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="军中绿花"
+        android:textColor="#000"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:text="龚玥"
+        android:layout_marginLeft="40sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textColor="#65B2FF"
+            android:text="03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="战友还记得吗"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="小曾"
+            android:layout_marginLeft="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="50dp"
+            android:textColor="#65B2FF"
+            android:text="04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="一二三四歌"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="阎维文"
+            android:layout_marginLeft="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textColor="#65B2FF"
+            android:text="05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="75厘米"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="75厘米"
+            android:layout_marginLeft="60sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="35dp"
+            android:textColor="#65B2FF"
+            android:text="06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="打靶归来"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="贾世骏"
+            android:layout_marginLeft="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textColor="#65B2FF"
+            android:text="07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="精忠报国"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="屠洪刚"
+            android:layout_marginLeft="50sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="35dp"
+            android:textColor="#65B2FF"
+            android:text="08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="我的老班长"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="小曾"
+            android:layout_marginLeft="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginLeft="10dp"
+            android:textColor="#65B2FF"
+            android:text="09"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="保卫黄河"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="曹丁"
+            android:layout_marginLeft="50sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="50dp"
+            android:textColor="#65B2FF"
+            android:text="10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="国际歌"
+            android:textColor="#000"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="中国人民解放军"
+            android:layout_marginLeft="20sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>
 </LinearLayout>
