@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    >
+<LinearLayout
+    android:layout_width="341dp"
+    android:layout_height="41dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="15dp"
+    android:layout_marginRight="15dp"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@drawable/special_2017_searchbox"
+    >
+    <TextView
+        android:id="@+id/special_2017_difficult_school"
+        android:layout_width="341dp"
+        android:layout_height="41dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="13dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="14dp"
+        android:hint="请选择学院"
+        android:textColor="#959C9F"
+        ></TextView>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="341dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginRight="14dp"
+        android:orientation="vertical"
+        android:background="@drawable/special_2017_searchbox"
+        android:layout_gravity="center"
+        >
+        <TextView
+            android:id="@+id/special_2017_difficult_project"
+            android:layout_width="341dp"
+            android:layout_height="41dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="14dp"
+            android:textColor="#959C9F"
+            android:hint="请选择专业"></TextView>
+    </LinearLayout>
+
+
+
+    <freshmanspecial.mredrock.com.newstudents.View.PieChartView
+        android:layout_width="335dp"
+        android:layout_height="335dp"
+        android:id="@+id/difficult_Piechartview"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="4dp"
+        />
+</LinearLayout>

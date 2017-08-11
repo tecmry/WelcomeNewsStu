@@ -11,8 +11,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Special_2017_MainActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:name=".activity.Special_2017_MainActivity"/>
         <activity android:name=".activity.Special_2017_FirstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +20,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.Special_2017_TrainingActivity" />
+        <activity android:name=".activity.At_cqupt_data"/>
+        <activity android:name=".activity.student_style"/>
     </application>
 
 </manifest>

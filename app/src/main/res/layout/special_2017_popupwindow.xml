@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="260dp"
+    android:layout_height="350dp">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="vertical"
+    android:id="@+id/LLay"
+    android:gravity="right"
+    >
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:id="@+id/popwindow_button"
+        android:background="@drawable/special_2017_popupbutton"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="11dp"
+        />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="310dp"
+    android:layout_below="@+id/LLay"
+    android:orientation="vertical"
+    >
+    <freshmanspecial.mredrock.com.newstudents.View.CircleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:id="@+id/Popwindow_Iv"
+        />
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:id="@+id/Popwindow_Name"
+        />
+    <TextView
+        android:layout_width="230dp"
+        android:layout_height="160dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:id="@+id/Popwindow_News"
+        />
+</LinearLayout>
+</RelativeLayout>

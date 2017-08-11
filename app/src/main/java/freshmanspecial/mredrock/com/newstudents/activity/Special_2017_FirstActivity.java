@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -30,11 +31,7 @@ public class Special_2017_FirstActivity extends AppCompatActivity implements Vie
      * */
     private android.support.v4.app.Fragment fr_cqupt_data;
     private android.support.v4.app.Fragment fr_student_style;
-    /**
-     * 等李亮合并
-     * */
-    private android.support.v4.app.Fragment fr_menwomen;
-    private android.support.v4.app.Fragment fr_work;
+
 
     private Toolbar toolbar;
 
@@ -86,47 +83,23 @@ public class Special_2017_FirstActivity extends AppCompatActivity implements Vie
             Intent intent = new Intent(Special_2017_FirstActivity.this,Special_2017_MainActivity.class);
             startActivity(intent);
 
-        }else  if(view.getId() == R.id.military_training){
+        }else if (view.getId() == R.id.cqupt_data) {
+            Log.d("TAG", "You click cqupt_data");
+            Intent intent = new Intent(Special_2017_FirstActivity.this, At_cqupt_data.class);
+            startActivity(intent);
+            index_fr = 3;
+        } else if (view.getId() == R.id.student_style) {
+            Log.d("TAG", "You click student_style");
+            Intent intent = new Intent(Special_2017_FirstActivity.this, student_style.class);
+            startActivity(intent);
+            index_fr = 2;
+        }
+        else  if(view.getId() == R.id.military_training){
             Intent intent = new Intent(Special_2017_FirstActivity.this,Special_2017_TrainingActivity.class);
             startActivity(intent);
         }
 
     }
 
-    private void ViewGone(int inde) {
-        if (inde == 0) {
-            student_method.setVisibility(View.GONE);
-            student_style.setVisibility(View.GONE);
-            military_training.setVisibility(View.GONE);
-            cqupt_data.setVisibility(View.GONE);
-            index = 1;
-        }else if (index == 1)
-        {
-            student_method.setVisibility(View.VISIBLE);
-            student_style.setVisibility(View.VISIBLE);
-            cqupt_data.setVisibility(View.VISIBLE);
-            military_training.setVisibility(View.VISIBLE);
-            //DeleteFragment();
-            index = 0;
-        }
-    }
 
-    private void DeleteFragment() {
-        if (index_fr == 0)
-        {
-
-        }else if (index_fr == 1)
-        {
-            getSupportFragmentManager().beginTransaction().remove(fr_menwomen).commit();
-
-        }else if (index_fr == 2)
-        {
-
-            getSupportFragmentManager().beginTransaction().remove(fr_student_style).commit();
-        }else if (index_fr == 3)
-        {
-
-            getSupportFragmentManager().beginTransaction().remove(fr_cqupt_data).commit();
-        }
-    }
 }

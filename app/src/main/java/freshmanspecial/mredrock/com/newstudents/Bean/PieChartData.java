@@ -7,7 +7,7 @@ package freshmanspecial.mredrock.com.newstudents.Bean;
 public class PieChartData {
     private String type;
 
-    private int value;
+    private float value;
 
     public void setType(String type)
     {
@@ -17,11 +17,11 @@ public class PieChartData {
     {
         return type;
     }
-    public void setValue(int value)
+    public void setValue(float value)
     {
         this.value = value;
     }
-    public int getValue()
+    public float getValue()
     {
         return value;
     }

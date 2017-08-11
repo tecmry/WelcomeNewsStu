@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="410dp"
+    android:layout_height="1500dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <freshmanspecial.mredrock.com.newstudents.View.CircleImageView
+        android:id="@+id/special_Iv_bestteacher"
+        android:layout_width="170dp"
+        android:layout_height="150dp"
+        android:src="@drawable/special_2017_toolbarbackground"
+        app:shape= "circle"
+        />
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="150dp"
+        android:orientation="vertical"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:text="    姓名"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:id="@+id/special_TV_talkteacher"
+            />
+        
+    </LinearLayout>
+</LinearLayout>
