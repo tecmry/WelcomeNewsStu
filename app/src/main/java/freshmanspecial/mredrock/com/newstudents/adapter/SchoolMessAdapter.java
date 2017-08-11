@@ -1,11 +1,13 @@
 package freshmanspecial.mredrock.com.newstudents.adapter;
 
 import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +26,7 @@ import freshmanspecial.mredrock.com.newstudents.R;
 
 
 public class SchoolMessAdapter extends RecyclerView.Adapter<SchoolMessAdapter.ViewHolder>{
+
 
     private Context context;
     private FragmentActivity activity;
@@ -107,6 +110,13 @@ public class SchoolMessAdapter extends RecyclerView.Adapter<SchoolMessAdapter.Vi
                 public Object instantiateItem(ViewGroup container, int position) {
                     int newPosition = position% imgs.size();
                     ImageView view =imgs.get(newPosition);
+                    //点击图片，收缩气泡，返回主页面
+                    view.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            hidePopuwindow();
+                        }
+                    });
                     container.addView(view);
                     return view;
                 }
@@ -120,8 +130,6 @@ public class SchoolMessAdapter extends RecyclerView.Adapter<SchoolMessAdapter.Vi
 
 
 
-
-
             @Override
             public void onClick(View v) {
                 //5.弹出新气泡之前，删除旧气泡
@@ -129,13 +137,23 @@ public class SchoolMessAdapter extends RecyclerView.Adapter<SchoolMessAdapter.Vi
                 ViewPager vp_big_img = (ViewPager) contentView.findViewById(R.id.vp_big_img);
                 myPagerAdapter = new MypagerAdapter();
                 vp_big_img.setAdapter(myPagerAdapter);
-                popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,true);
+                //popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+                //两者结合，点击外部消失
+                popupWindow.setOutsideTouchable(true);
+                popupWindow.setBackgroundDrawable(new BitmapDrawable());
                 popupWindow.setFocusable(true);
 
-
-                popupWindow.showAtLocation(v, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL,0,0);
                 backgroundAlpha(0.3f);
+                popupWindow.showAtLocation(v, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL,0,0);
+
+                popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+                    @Override
+                    public void onDismiss() {
+                        backgroundAlpha(1.0f);
+                    }
+                });
+
 
                 ScaleAnimation scaleAnimation = new ScaleAnimation(0,1,0,1, Animation.RELATIVE_TO_SELF,0,Animation.RELATIVE_TO_SELF,0.5f);
                 scaleAnimation.setDuration(500);
@@ -148,13 +166,6 @@ public class SchoolMessAdapter extends RecyclerView.Adapter<SchoolMessAdapter.Vi
                 animationSet.addAnimation(scaleAnimation);
                 animationSet.addAnimation(alphaAnimation);
                 contentView.startAnimation(animationSet);
-
-                imageView.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        hidePopuwindow();
-                    }
-                });
 
             }
         });
@@ -196,4 +207,6 @@ public class SchoolMessAdapter extends RecyclerView.Adapter<SchoolMessAdapter.Vi
             mess_describe_content = (TextView) view.findViewById(R.id.mess_describe_content);
         }
     }
+
+
 }

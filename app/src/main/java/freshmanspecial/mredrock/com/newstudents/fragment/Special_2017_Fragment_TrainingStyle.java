@@ -2,6 +2,7 @@ package freshmanspecial.mredrock.com.newstudents.fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -124,6 +125,13 @@ public class Special_2017_Fragment_TrainingStyle extends Fragment implements Vie
                     @Override
                     public Object instantiateItem(ViewGroup container, int position) {
                         ImageView view =imgs.get(position);
+                        //点击图片，收缩气泡，返回主页面
+                        view.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                hidePopuwindow();
+                            }
+                        });
                         container.addView(view);
                         return view;
                     }
@@ -142,14 +150,24 @@ public class Special_2017_Fragment_TrainingStyle extends Fragment implements Vie
                     View contentView = View.inflate(getContext(), R.layout.special_2017_popu_window_viewpager, null);
                     ViewPager vp_big_img = (ViewPager) contentView.findViewById(R.id.vp_big_img);
                     myPagerAdapter = new MypagerAdapter();
-
-                    popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                    popupWindow.setFocusable(true);
+                    popupWindow = new PopupWindow(contentView, ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT,true);
                     vp_big_img.setAdapter(myPagerAdapter);
 
+                    popupWindow.setOutsideTouchable(true);
+                    popupWindow.setBackgroundDrawable(new BitmapDrawable());
+                    popupWindow.setFocusable(true);
 
-                    popupWindow.showAtLocation(v, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL,0,0);
                     backgroundAlpha(0.3f);
+                    popupWindow.showAtLocation(v, Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL,0,0);
+
+                    popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+                        @Override
+                        public void onDismiss() {
+                            backgroundAlpha(1.0f);
+                        }
+                    });
+
+
 
                     ScaleAnimation scaleAnimation = new ScaleAnimation(0,1,0,1, Animation.RELATIVE_TO_SELF,0,Animation.RELATIVE_TO_SELF,0.5f);
                     scaleAnimation.setDuration(500);
@@ -162,13 +180,7 @@ public class Special_2017_Fragment_TrainingStyle extends Fragment implements Vie
                     animationSet.addAnimation(scaleAnimation);
                     animationSet.addAnimation(alphaAnimation);
                     contentView.startAnimation(animationSet);
-                    //点击图片，收缩气泡，返回主页面
-                    imageView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            hidePopuwindow();
-                        }
-                    });
+
 
                 }
             });
